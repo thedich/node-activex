@@ -1,0 +1,18 @@
+{
+  "name": "node-activex",
+  "version": "1.0.0",
+  "description": "Connection Between ActiveX (COM Objects) and Nodejs",
+  "author": {
+    "name": "Dmitry Chernykh",
+    "url": "http://thedich.github.io/",
+    "email": "distinctive@yandex.ru"
+  },
+  "repository": {
+    "type": "git",
+    "url":  "git+https://thedich.github.com/node-activex"
+  },
+  "keywords": [ "Nodejs", "ActiveX", "COM Objects", "Windows" ],
+  "license": "MIT",
+  "homepage": "https://thedich.github.com/node-activex#readme",
+  "dependencies": { "jscript": "^1.0.0", "json3": "^3.3.2"}
+}
