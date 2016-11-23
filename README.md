@@ -3,11 +3,11 @@ Node-ActiveX
 
 Usage
 ---------------------
-All COMObjects must be running.
-
-var nodex = require('./node-activex.js'); // import
-var firstDevice = "Host",                 // name for first device
-    syncDevice  = "SyncServer";           // name for second device
+All COMObjects must be is allready running.
+```
+var nodex = require('./node-activex.js');  // import
+var firstDevice = "Host",                  // name for first device
+    syncDevice  = "SyncServer";            // name for second device
 
 nodex.setConsole(true);                                                    // default is true;
 nodex.registerObject( firstDevice, "Host.DeviceManager");                  // ( Name, Guid )
@@ -19,17 +19,27 @@ nodex.registerCallBack( firstDevice, "OnMoney_Received_FullSum( Value )"); // ( 
 nodex.registerCallBack( firstDevice, "OnInternalSignal( SigNum, Data )");  // ( Name, Function Notation Event )
 nodex.registerCallBack( firstDevice, "OnMoney_Dispensed()");               // ( Name, Function Notation Event )
 
-nodex.endCallBackRegistration( function(){ console.log( "--------------CALLBACKS_IS_READY"); });    // need, if you listen callbacks
-nodex.onMessage(function(data){ console.log( "---ANSWER-NODE-X---: " + JSON.stringify(data) ) });   // callbacks EventData & ReturnData
+// need, if you listen callbacks
+nodex.endCallBackRegistration(
+    function(){ console.log( "CALLBACKS_IS_READY"); }
+    );
+
+// callbacks EventData & ReturnData
+nodex.onMessage(
+    function(data){ console.log( "---ANSWER-NODE-X---: " + JSON.stringify(data) ) }
+    );
+```
 
 Sending Commands
 ---------------------
 
+```
 var data = {};
 data.deviceType = firstDevice;                      // name device
 data.command    = "MethodInFirstDevice"             // function name
-data.execdata   = { value1:1, value2:2, value3:3 }; // up to 8 (max) exec values
+data.execdata   = { one:1, two:2, three:3 };        // up to 8 (max) exec values
 nodex.send( value );                                // exec command & data
+```
 
 Notes
 ---------------------
@@ -37,3 +47,8 @@ Notes
  - This stuff using two cscript.exe, one for commands & second for callbacks.
  - No need winOLE npm packages to use ActiveX.
  - Enjoy, pal.
+
+License
+----
+
+MIT
