@@ -3,7 +3,7 @@ Node-ActiveX
 
 Usage
 ---------------------
-All COMObjects must be is allready running.
+All COM Objects must be is allready running.
 ```
 var nodex = require('./node-activex.js');  // import
 var firstDevice = "Host",                  // name for first device
@@ -38,7 +38,7 @@ var data = {};
 data.deviceType = firstDevice;                      // name device
 data.command    = "MethodInFirstDevice"             // function name
 data.execdata   = { one:1, two:2, three:3 };        // up to 8 (max) exec values
-nodex.send( value );                                // exec command & data
+nodex.send( data );                                 // exec command & data
 ```
 
 Notes
