@@ -3,7 +3,7 @@ Node-ActiveX
 
 Usage
 ---------------------
-All COM Objects must be is allready running.
+Good news, everyone! The usage of this sfuff is simple as a penny.
 ```
 var nodex = require('./node-activex.js');  // import
 var firstDevice = "Host",                  // name for first device
