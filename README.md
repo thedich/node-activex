@@ -27,6 +27,9 @@ nodex.endCallBackRegistration( function()
 // callbacks EventData & ReturnData
 nodex.onMessage( function(data)
 { console.log( "---ANSWER-NODE-X---: " + JSON.stringify(data) ) };);
+
+// to close all processes
+nodex.close();
 ```
 
 Sending Commands
@@ -38,6 +41,9 @@ data.deviceType = firstDevice;                      // name device
 data.command    = "MethodInFirstDevice"             // function name
 data.execdata   = { one:1, two:2, three:3 };        // up to 8 (max) exec values
 nodex.send( data );                                 // exec command & data
+
+// the example above is Host.MethodInFirstDevice( 1, 2, 3);
+// if "data.execdata" is undefined, this is equal Host.MethodInFirstDevice();
 ```
 
 Notes
